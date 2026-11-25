@@ -1,3 +1,4 @@
+from app import calculate_price
 
 
 def test_discount_10_percent():
@@ -8,4 +9,5 @@ def test_discount_20_percent():
 
 def test_no_discount():
     assert calculate_price(100,0) == 100
-print("All tests passed!")
+print("All tests passed!"from app import calculate_price
+)
