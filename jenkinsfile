@@ -3,9 +3,27 @@ pipeline {
 
     stages {
 
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                echo 'Hello Jenkins'
+                echo 'Downloading code from GitHub'
+            }
+        }
+
+        stage('Verify Python') {
+            steps {
+                bat 'python --version'
+            }
+        }
+
+        stage('Install Pytest') {
+            steps {
+                bat 'pip install pytest'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'pytest -v'
             }
         }
 
